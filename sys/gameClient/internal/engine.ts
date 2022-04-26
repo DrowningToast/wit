@@ -15,3 +15,5 @@ let gameState = {
     opponent: {},
   },
 };
+
+export default null;
