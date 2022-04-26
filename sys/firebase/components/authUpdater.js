@@ -19,7 +19,6 @@ const AuthUpdater = () => {
       if (user) {
         const token = await getFirebaseToken();
         // Setup default header
-        console.log(user);
         axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
         setProfile({ ...user, token });
         setToken(token);
@@ -31,13 +30,11 @@ const AuthUpdater = () => {
 
     // Setup webworker for token refresher
     let worker = WebworkerLoader(tokenRefresher);
-    console.log("Webworker has started");
     worker.postMessage("Trigger Refresh WebWorker");
     worker.onmessage = async (e) => {
       try {
         console.log("Webworker is refreshing the token");
         const token = await getNewIdToken();
-        console.log(token);
         setProfile({
           ...profile,
           token,

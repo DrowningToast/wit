@@ -138,8 +138,14 @@ export const ConditionalRedirect = ({ cb, path }) => {
   const router = useRouter();
 
   useEffect(() => {
-    if (cb(fbProfile, ready)) router.push(path);
-  }, [fbProfile]);
+    console.log(fbProfile);
+    console.log(ready);
+    console.log(cb(fbProfile, ready));
+    if (cb(fbProfile, ready)) {
+      console.log("push it!");
+      router.push(path);
+    }
+  }, [fbProfile, ready]);
 
   return <></>;
 };

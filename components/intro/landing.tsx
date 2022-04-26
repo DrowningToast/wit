@@ -9,7 +9,8 @@ import { User } from "firebase/auth";
 const Landing: React.FC = () => {
   const [state, setState] = useState<"signin" | "signup" | null>(null);
 
-  const [user] = useAtom<User | null>(firebaseUserAtom);
+  const [user] = useAtom<User | null | string>(firebaseUserAtom);
+
   return (
     <section
       className={`h-screen w-full bg-dark flex flex-col justify-around items-center ${
@@ -22,7 +23,7 @@ const Landing: React.FC = () => {
       </div>
       <div className="flex-col flex gap-y-2 items-center justify-center">
         {/* Intro */}
-        {!state && !user && (
+        {!state && (!user || user === "SIGNEDOUT") && (
           <>
             <div
               onClick={() => setState("signup")}
@@ -41,7 +42,7 @@ const Landing: React.FC = () => {
             </h5>
           </>
         )}
-        {!user && (
+        {(!user || user === "SIGNEDOUT") && (
           <>
             <Signin state={state} setState={setState} />
             <Signup state={state} setState={setState} />

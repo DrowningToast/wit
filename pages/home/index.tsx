@@ -10,8 +10,8 @@ const Home: React.FC = () => {
   return (
     <section className="bg-dark flex flex-col items-center justify-center py-12 px-16 w-full h-screen">
       <ConditionalRedirect
-        cb={(user: User, ready: boolean) => {
-          return !user && ready;
+        cb={(user: User | string, ready: boolean) => {
+          return user === "SIGNEDOUT";
         }}
         path="/"
       />
