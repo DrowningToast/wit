@@ -1,0 +1,38 @@
+{
+  "name": "wit",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@react-three/drei": "^9.4.3",
+    "@react-three/fiber": "^8.0.11",
+    "autoprefixer": "^10.4.4",
+    "axios": "^0.26.1",
+    "firebase": "^9.6.11",
+    "framer-motion": "^6.3.0",
+    "framer-motion-3d": "^6.3.0",
+    "jotai": "^1.6.4",
+    "mongoose": "^6.3.0",
+    "next": "12.1.5",
+    "postcss": "^8.4.12",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-form-hook": "0.0.1",
+    "react-hook-form": "^7.30.0",
+    "tailwindcss": "^3.0.24",
+    "three": "^0.139.2",
+    "use-cannon": "^0.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.24",
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.5",
+    "sass": "^1.50.0",
+    "typescript": "^4.6.3"
+  }
+}
