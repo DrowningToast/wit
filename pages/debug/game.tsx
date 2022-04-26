@@ -2,7 +2,7 @@ import { ConditionalRedirect } from "@fb/auth";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const gameDebug = () => {
+const GameDebug = () => {
   const [gameSocket, setSocket] = useState<null | WebSocket>(null);
 
   useEffect(() => {
@@ -31,4 +31,4 @@ const gameDebug = () => {
   );
 };
 
-export default gameDebug;
+export default GameDebug;
